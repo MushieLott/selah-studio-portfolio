@@ -27,11 +27,11 @@
     --maxw:1120px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;font-size:18px;}
   body{
     font-family:'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    color:var(--ink);background:var(--paper);line-height:1.75;font-weight:300;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;
+    color:var(--ink);background:var(--paper);line-height:1.72;font-weight:300;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:1rem;
   }
   h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.14;}
   a{color:inherit;text-decoration:none;}
@@ -52,17 +52,19 @@
   .sprig{display:inline-block;vertical-align:middle;}
 
   /* ---------- Nav ---------- */
-  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);
-    background:rgba(241,235,224,.8);border-bottom:1px solid var(--line);}
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+    background:rgba(241,235,224,.82);border-bottom:1px solid var(--line);
+    box-shadow:0 6px 20px -10px rgba(59,54,48,.25);}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;}
   .brand{display:flex;align-items:center;gap:12px;font-family:'Cormorant Garamond',serif;
     font-size:1.15rem;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--charcoal);}
   .navlinks{display:flex;gap:34px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);}
   .navlinks a{transition:color .2s;}
   .navlinks a:hover{color:var(--plum);}
-  .nav-cta{border:1px solid var(--plum);color:var(--plum);padding:9px 20px;border-radius:2px;
-    font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;transition:all .22s;}
-  .nav-cta:hover{background:var(--plum);color:#fff;}
+  .nav-cta{border:1px solid var(--plum);color:var(--plum);padding:9px 20px;border-radius:4px;
+    font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;transition:all .22s;
+    box-shadow:0 6px 16px -8px rgba(94,63,151,.4),inset 0 1px 0 rgba(255,255,255,.4);}
+  .nav-cta:hover{background:var(--plum);color:#fff;transform:translateY(-1px);box-shadow:0 12px 24px -8px rgba(94,63,151,.5);}
   @media(max-width:860px){.navlinks{display:none;}}
 
   /* ---------- Hero ---------- */
@@ -106,21 +108,25 @@
   .about-portrait .frame{aspect-ratio:4/5;border-radius:3px;overflow:hidden;border:1px solid var(--line);
     background:
       linear-gradient(150deg,var(--sand),var(--dove));
-    display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
-  .about-portrait .frame::after{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.5);border-radius:2px;}
+    display:flex;align-items:center;justify-content:center;text-align:center;position:relative;
+    box-shadow:0 40px 80px -34px rgba(59,54,48,.5),0 16px 36px rgba(59,54,48,.16);}
+  .about-portrait .frame::after{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.5);border-radius:2px;z-index:2;pointer-events:none;}
+  .about-portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;position:relative;z-index:1;}
   .ph{color:var(--muted);font-size:.78rem;letter-spacing:.05em;padding:22px;position:relative;z-index:2;}
   .ph b{display:block;color:var(--plum);font-size:.72rem;margin-bottom:8px;letter-spacing:.22em;text-transform:uppercase;font-family:'Jost',sans-serif;}
   .values{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px;}
-  .chip{background:var(--plum-tint);border:1px solid #E1D6EE;border-radius:999px;padding:7px 15px;
+  .chip{background:linear-gradient(165deg,#F4EFFA,var(--plum-tint));border:1px solid #E1D6EE;border-radius:999px;padding:7px 15px;
+    box-shadow:0 6px 14px -6px rgba(71,45,119,.28),inset 0 1px 0 rgba(255,255,255,.85);
     font-size:.74rem;color:var(--plum-d);letter-spacing:.08em;text-transform:uppercase;}
   @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:36px;}}
 
   /* ---------- Creative: landscape project slides ---------- */
   .project{margin-bottom:46px;}
-  .slide{aspect-ratio:16/9;border:1px solid var(--line);border-radius:6px;overflow:hidden;position:relative;
-    display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(59,54,48,.1);
+  .slide{aspect-ratio:16/9;border:1px solid var(--line);border-radius:8px;overflow:hidden;position:relative;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 30px 56px -28px rgba(59,54,48,.42),0 8px 20px rgba(59,54,48,.1);
     transition:transform .28s,box-shadow .28s;}
-  .project:hover .slide{transform:translateY(-4px);box-shadow:0 24px 50px rgba(59,54,48,.16);}
+  .project:hover .slide{transform:translateY(-5px);box-shadow:0 44px 74px -30px rgba(59,54,48,.5),0 14px 28px rgba(59,54,48,.15);}
   .slide.s1{background:linear-gradient(135deg,var(--sand),var(--dove));}
   .slide.s2{background:linear-gradient(135deg,var(--dove),var(--oat));}
   .slide.s3{background:linear-gradient(135deg,var(--oat),var(--paper-2));}
@@ -141,12 +147,14 @@
   /* ---------- Operations ---------- */
   .ops-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
   .ops-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .ops-card{background:var(--dove);border:1px solid var(--line);border-radius:3px;padding:26px 22px;transition:transform .2s,box-shadow .2s;}
-  .ops-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(59,54,48,.1);}
+  .ops-card{background:linear-gradient(165deg,#fff,var(--dove));border:1px solid var(--line);border-radius:8px;padding:26px 22px;transition:transform .28s ease,box-shadow .28s ease;
+    box-shadow:0 20px 40px -26px rgba(59,54,48,.38),0 5px 14px rgba(59,54,48,.08),inset 0 1px 0 rgba(255,255,255,.7);}
+  .ops-card:hover{transform:translateY(-6px);box-shadow:0 36px 62px -28px rgba(59,54,48,.48),0 12px 26px rgba(59,54,48,.13);}
   .ops-card .ic{margin-bottom:14px;}
   .ops-card h3{font-size:1.4rem;color:var(--charcoal);margin-bottom:6px;}
   .ops-card p{font-size:.86rem;color:var(--muted);font-weight:300;}
-  .case{background:var(--plum-tint);border:1px solid #E1D6EE;border-radius:4px;padding:34px 32px;}
+  .case{background:linear-gradient(165deg,#F5F0FA,var(--plum-tint));border:1px solid #E1D6EE;border-radius:10px;padding:34px 32px;
+    box-shadow:0 26px 50px -28px rgba(71,45,119,.34),0 8px 18px rgba(59,54,48,.08),inset 0 1px 0 rgba(255,255,255,.8);}
   .case .tag{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--plum);margin-bottom:14px;}
   .case h3{font-size:1.85rem;color:var(--charcoal);margin-bottom:12px;}
   .case p{color:var(--muted);font-weight:300;font-size:.94rem;}
@@ -157,30 +165,105 @@
   @media(max-width:860px){.ops-wrap{grid-template-columns:1fr;gap:34px;}}
   @media(max-width:520px){.ops-cards{grid-template-columns:1fr;}}
 
+  /* ---------- Back-office: data-led operations section ---------- */
+  .bo-hero{display:flex;flex-direction:column;gap:44px;}
+  .bo-head{max-width:720px;}
+  .bo-head h2{font-size:clamp(2.1rem,3.6vw,2.9rem);line-height:1.12;color:var(--charcoal);margin:14px 0 18px;font-weight:500;}
+  .bo-head p{color:var(--ink);font-weight:300;font-size:1.02rem;max-width:52ch;}
+  .bo-dash img{width:100%;display:block;border-radius:14px;
+    box-shadow:0 40px 80px -30px rgba(59,54,48,.5),0 12px 28px rgba(59,54,48,.14);}
+  .bo-impact{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0;}
+  .impact-item{display:flex;gap:16px;align-items:flex-start;}
+  .impact-item .ic{flex:0 0 auto;margin-top:4px;}
+  .impact-item b{display:block;font-family:'Jost',sans-serif;font-size:2rem;color:var(--charcoal);font-weight:500;line-height:1;}
+  .impact-item span{display:block;font-size:.88rem;color:var(--muted);font-weight:300;margin-top:6px;line-height:1.45;}
+  .bo-cards{display:grid;grid-template-columns:1.12fr .88fr;gap:20px;align-items:stretch;}
+  .bo-panel{background:linear-gradient(165deg,#ffffff 0%,#fbf8f2 100%);border:1px solid var(--line);border-radius:12px;
+    padding:22px 22px 22px;display:flex;flex-direction:column;position:relative;overflow:hidden;
+    box-shadow:0 34px 66px -30px rgba(59,54,48,.44),0 12px 26px rgba(59,54,48,.12),inset 0 1px 0 rgba(255,255,255,.9);}
+  .bo-panel::before{content:"";position:absolute;top:0;left:0;right:0;height:52%;pointer-events:none;
+    background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,0));}
+  .bo-panel>*{position:relative;z-index:1;}
+  .bo-panel .k{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--plum);margin-bottom:20px;}
+  .donut-wrap{display:flex;align-items:center;gap:28px;}
+  .donut{--v1:64%;--v2:90%;--v3:98%;flex:0 0 auto;width:210px;height:210px;border-radius:50%;
+    background:conic-gradient(var(--plum) 0 var(--v1),var(--oat) var(--v1) var(--v2),#7E9B7A var(--v2) var(--v3),#C39BB0 var(--v3) 100%);
+    display:flex;align-items:center;justify-content:center;position:relative;
+    box-shadow:0 18px 34px -12px rgba(59,54,48,.4),inset 0 3px 8px rgba(255,255,255,.55),inset 0 -6px 14px rgba(59,54,48,.22);}
+  .donut::before{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
+    background:radial-gradient(120px 90px at 34% 26%,rgba(255,255,255,.5),rgba(255,255,255,0) 60%);}
+  .donut::after{content:"";position:absolute;width:126px;height:126px;background:#fff;border-radius:50%;
+    box-shadow:inset 0 2px 6px rgba(59,54,48,.16),0 2px 5px rgba(255,255,255,.8);}
+  .donut .cn{position:relative;z-index:1;text-align:center;}
+  .donut .cn small{display:block;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .donut .cn b{display:block;font-size:.86rem;color:var(--charcoal);font-family:'Jost',sans-serif;margin-top:4px;}
+  .legend{display:flex;flex-direction:column;gap:14px;flex:1;}
+  .legend .row{display:flex;align-items:flex-start;gap:11px;}
+  .legend .dot{width:10px;height:10px;border-radius:50%;flex:0 0 auto;margin-top:5px;}
+  .legend .t b{display:block;font-size:.9rem;color:var(--ink);font-weight:400;line-height:1.2;}
+  .legend .t span{display:block;font-size:.78rem;color:var(--muted);margin-top:2px;}
+  .donut-note{margin-top:auto;padding-top:22px;font-size:.84rem;color:var(--plum);font-style:italic;}
+  .glance{display:flex;flex-direction:column;justify-content:space-between;gap:14px;}
+  .glance .g{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding-bottom:12px;border-bottom:1px solid var(--line-soft);}
+  .glance .g:last-child{border-bottom:none;padding-bottom:0;}
+  .glance .g .lab{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+  .glance .g .val{font-family:'Jost',sans-serif;font-size:1.2rem;color:var(--charcoal);margin-top:4px;}
+  .glance .g svg{flex:0 0 auto;}
+  .bo-help{margin-top:60px;}
+  .bo-help .eyebrow{text-align:center;margin-bottom:32px;}
+  .help-row{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+  .help-item .ic{margin-bottom:14px;}
+  .help-item h3{font-size:1.28rem;color:var(--charcoal);margin-bottom:8px;font-weight:500;}
+  .help-item p{font-size:.92rem;color:var(--muted);font-weight:300;line-height:1.55;}
+  .bo-bar{margin-top:48px;background:var(--plum-tint);border:1px solid #E1D6EE;border-radius:12px;
+    padding:26px 32px;display:flex;align-items:center;gap:24px;}
+  .bo-bar .heart{flex:0 0 auto;}
+  .bo-bar .msg{color:var(--ink);font-weight:300;font-size:1.04rem;max-width:52ch;}
+  .bo-bar .now{margin-left:auto;text-align:right;flex:0 0 auto;}
+  .bo-bar .now small{display:block;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+  .bo-bar .now b{color:var(--plum-d);font-weight:500;font-size:1.02rem;}
+  @media(max-width:860px){
+    .bo-impact{grid-template-columns:1fr;gap:24px;}
+    .bo-cards{grid-template-columns:1fr;}
+    .help-row{grid-template-columns:repeat(2,1fr);gap:28px;}
+  }
+  @media(max-width:600px){
+    .donut-wrap{flex-direction:column;align-items:flex-start;gap:20px;}
+    .help-row{grid-template-columns:1fr;}
+    .bo-bar{flex-direction:column;align-items:flex-start;gap:14px;}.bo-bar .now{margin-left:0;text-align:left;}
+  }
+
   /* ---------- Products ---------- */
   .products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .product{background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;
-    transition:transform .2s,box-shadow .2s;}
-  .product:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(59,54,48,.12);}
+  .product{background:linear-gradient(165deg,#fff,#fbf8f2);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .28s ease,box-shadow .28s ease;
+    box-shadow:0 22px 44px -26px rgba(59,54,48,.4),0 6px 16px rgba(59,54,48,.08),inset 0 1px 0 rgba(255,255,255,.8);}
+  .product:hover{transform:translateY(-7px);box-shadow:0 40px 70px -28px rgba(59,54,48,.5),0 14px 30px rgba(59,54,48,.14),inset 0 1px 0 rgba(255,255,255,.9);}
   .product .thumb{aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;
     color:var(--muted);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--line);
     background:linear-gradient(150deg,var(--sand),var(--dove));}
-  .product .body{padding:24px;}
+  .product .body{padding:24px;display:flex;flex-direction:column;flex:1;}
   .product h3{font-size:1.5rem;color:var(--charcoal);margin-bottom:8px;}
   .product p{font-size:.86rem;color:var(--muted);margin-bottom:16px;font-weight:300;}
   .product .shop{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--plum);
-    display:inline-flex;align-items:center;gap:8px;}
+    display:inline-flex;align-items:center;gap:8px;margin-top:auto;align-self:flex-start;}
   .product .shop::after{content:"→";transition:transform .2s;}
   .product:hover .shop::after{transform:translateX(4px);}
   @media(max-width:860px){.products{grid-template-columns:1fr;}}
 
   /* ---------- Work with me ---------- */
-  .cta-band{background:linear-gradient(160deg,var(--dove),var(--paper-2));border:1px solid var(--line);
-    border-radius:6px;padding:62px 44px;text-align:center;}
+  .cta-band{background:linear-gradient(160deg,#F3EEE6,var(--paper-2));border:1px solid var(--line);
+    border-radius:14px;padding:62px 44px;text-align:center;
+    box-shadow:0 46px 90px -40px rgba(59,54,48,.4),0 14px 30px rgba(59,54,48,.1),inset 0 1px 0 rgba(255,255,255,.75);}
   .cta-band h2{font-size:clamp(1.9rem,5vw,2.9rem);color:var(--charcoal);margin-bottom:14px;}
   .cta-band > p{color:var(--muted);max-width:560px;margin:0 auto 32px;font-weight:300;}
   .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:0 auto 40px;max-width:840px;text-align:left;}
-  .service{border:1px solid var(--line);border-radius:4px;padding:24px;background:rgba(255,255,255,.55);}
+  .service{border:1px solid var(--line);border-radius:8px;padding:24px;background:linear-gradient(165deg,#fff,#fbf8f2);
+    transition:transform .28s ease,box-shadow .28s ease;
+    box-shadow:0 16px 32px -22px rgba(59,54,48,.36),0 4px 12px rgba(59,54,48,.07),inset 0 1px 0 rgba(255,255,255,.8);}
+  .service:hover{transform:translateY(-5px);box-shadow:0 30px 54px -26px rgba(59,54,48,.46),0 10px 22px rgba(59,54,48,.12);}
   .service h4{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--plum-d);margin-bottom:8px;font-weight:600;}
   .service p{font-size:.82rem;color:var(--muted);margin:0;font-weight:300;}
   .contact-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:center;}
@@ -194,6 +277,107 @@
   .social a:hover{color:var(--plum);}
   .fineprint{font-size:.7rem;letter-spacing:.05em;opacity:.75;margin-top:14px;}
   footer .verse{margin-top:6px;font-size:1rem;}
+
+  /* ---------- Project media & case-study links ---------- */
+  .slide.fit{background:linear-gradient(135deg,var(--dove),var(--sand));}
+  .slide.fit img{object-fit:contain;padding:22px;}
+  .slide.case{background:var(--paper);}
+  .slide.case img{object-fit:contain;}
+  .caption em{color:var(--plum);font-style:italic;}
+  .slide-link{display:block;width:100%;height:100%;position:relative;cursor:pointer;}
+  .slide .zoom{position:absolute;bottom:16px;right:16px;background:rgba(59,54,48,.85);color:#fff;
+    font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px;
+    opacity:0;transform:translateY(6px);transition:opacity .25s ease,transform .25s ease;pointer-events:none;z-index:3;}
+  .project:hover .zoom{opacity:1;transform:none;}
+  /* MacBook mockup — dashboard in use */
+  .macbook{max-width:860px;margin:0 auto;perspective:2200px;position:relative;}
+  .macbook::after{content:"";position:absolute;left:1%;right:1%;bottom:-44px;height:78px;z-index:-1;
+    background:radial-gradient(ellipse at center,rgba(59,54,48,.5),rgba(59,54,48,0) 70%);filter:blur(12px);}
+  .macbook .mac-link{display:block;position:relative;cursor:pointer;
+    transform:rotateX(7deg);transform-origin:50% 100%;transition:transform .45s ease;}
+  .macbook:hover .mac-link{transform:rotateX(3deg);}
+  .mac-lid{position:relative;background:#111116;border-radius:22px;padding:14px;
+    box-shadow:0 60px 100px -30px rgba(59,54,48,.6),0 34px 56px -24px rgba(59,54,48,.4),0 12px 22px rgba(59,54,48,.18),inset 0 0 0 2px rgba(255,255,255,.05);}
+  .mac-cam{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:6px;height:6px;
+    border-radius:50%;background:#26262c;box-shadow:inset 0 0 2px #000;}
+  .mac-screen{border-radius:8px;overflow:hidden;background:#000;line-height:0;}
+  .mac-screen img{width:100%;display:block;}
+  .mac-base{position:relative;height:15px;width:110%;margin-left:-5%;
+    background:linear-gradient(#d3ccc0,#ab9f8d);border-radius:0 0 13px 13px;
+    box-shadow:0 28px 34px -16px rgba(59,54,48,.5);}
+  .mac-base::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:rgba(255,255,255,.4);}
+  .mac-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:8px;
+    background:#9a8f7d;border-radius:0 0 10px 10px;}
+  .macbook .zoom{position:absolute;bottom:44px;right:24px;background:rgba(59,54,48,.85);color:#fff;
+    font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px;
+    opacity:0;transform:translateY(6px);transition:opacity .25s ease,transform .25s ease;pointer-events:none;z-index:5;}
+  @media(max-width:520px){.macbook .mac-link{transform:none;}.mac-lid{border-radius:14px;padding:9px;}}
+  /* Operations slider */
+  .ops-slider{position:relative;max-width:980px;margin:0 auto;}
+  .ops-stage{position:relative;}
+  .ops-viewport{overflow:hidden;}
+  .ops-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+  .ops-slide{flex:0 0 100%;min-width:100%;padding-top:6px;}
+  .ops-nav{position:absolute;top:47%;transform:translateY(-50%);z-index:6;width:44px;height:44px;
+    border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.82);
+    -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);color:var(--charcoal);
+    font-family:'Jost',sans-serif;font-size:1.5rem;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(59,54,48,.16);transition:all .2s;}
+  .ops-nav:hover{background:var(--plum);color:#fff;border-color:var(--plum);}
+  .ops-nav.prev{left:2px;}.ops-nav.next{right:2px;}
+  .ops-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px;}
+  .ops-tab{font-family:'Jost',sans-serif;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);background:none;border:1px solid var(--line);border-radius:999px;padding:8px 18px;
+    cursor:pointer;transition:all .2s;}
+  .ops-tab:hover{color:var(--plum);border-color:var(--plum-l);}
+  .ops-tab.active{color:#fff;background:var(--plum);border-color:var(--plum);}
+  @media(max-width:600px){.ops-nav{width:38px;height:38px;font-size:1.2rem;}}
+  .ops-intro{max-width:680px;margin:0 auto 40px;text-align:center;}
+  .ops-intro .eyebrow{margin-bottom:12px;}
+  .ops-intro-title{font-size:clamp(2rem,5vw,3rem);color:var(--charcoal);letter-spacing:.06em;margin-bottom:12px;}
+  .ops-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:clamp(1.15rem,2.6vw,1.55rem);color:var(--plum);margin-bottom:18px;line-height:1.3;}
+  .ops-desc{color:var(--ink);font-weight:300;font-size:1.02rem;}
+  .ops-foot{text-align:center;margin-top:26px;}
+  /* Unraveled Studio showcase */
+  .tablet-feature{max-width:820px;margin:0 auto;}
+  .tablet-feature img{width:100%;border-radius:16px;
+    box-shadow:0 44px 74px -30px rgba(59,54,48,.55), 0 16px 32px rgba(59,54,48,.16);}
+  .tablet-feature figcaption{text-align:center;margin-top:18px;font-family:'Cormorant Garamond',serif;
+    font-style:italic;color:var(--muted);font-size:1.08rem;}
+  .cutout-row{display:flex;justify-content:center;align-items:flex-end;gap:36px;flex-wrap:wrap;margin-top:56px;}
+  .cutout{display:flex;flex-direction:column;align-items:center;}
+  .cutout img{height:300px;width:auto;object-fit:contain;
+    filter:drop-shadow(0 26px 22px rgba(59,54,48,.3));transition:transform .3s ease;}
+  .cutout:hover img{transform:translateY(-6px);}
+  .cutout figcaption{margin-top:20px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--plum);}
+  @media(max-width:600px){.cutout img{height:200px;}.cutout-row{gap:20px;}}
+  /* Case-study sliders */
+  .cs-slider{position:relative;max-width:1040px;margin:0 auto;}
+  .cs-stage{position:relative;}
+  .cs-viewport{overflow:hidden;}
+  .cs-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+  .cs-slide{flex:0 0 100%;min-width:100%;height:clamp(340px,54vw,560px);
+    display:flex;align-items:center;justify-content:center;padding:8px 14px;}
+  .cs-slide img{max-height:100%;max-width:100%;width:auto;object-fit:contain;}
+  .cs-slide.framed img{border-radius:14px;
+    box-shadow:0 40px 66px -30px rgba(59,54,48,.5),0 14px 26px rgba(59,54,48,.14);}
+  .cs-slide.cutout img{filter:drop-shadow(0 24px 20px rgba(59,54,48,.3));}
+  /* Charlotte's Sanctuary — dark purple dashboard slider */
+  .sanctuary-panel{background:var(--paper);border-radius:22px;padding:46px 22px 38px;
+    box-shadow:0 44px 90px -34px rgba(59,54,48,.42), 0 14px 34px rgba(59,54,48,.14);}
+  .macbook.sanctuary .mac-screen{aspect-ratio:16/10;background:#211836;}
+  .macbook.sanctuary .mac-screen img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+  .caption .meta{display:flex;flex-direction:column;gap:6px;}
+  .case-link{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--plum);
+    display:inline-flex;align-items:center;gap:7px;margin-top:8px;font-weight:400;}
+  .case-link::after{content:"→";transition:transform .2s;}
+  .case-link:hover::after{transform:translateX(4px);}
+  .product .thumb{padding:0;position:relative;}
+  .product .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;box-sizing:border-box;}
+  .product .thumb.fit img{object-fit:contain;padding:22px;}
+  .case-media{border-radius:4px;overflow:hidden;border:1px solid #E1D6EE;margin-bottom:22px;aspect-ratio:16/9;}
+  .case-media img{width:100%;height:100%;object-fit:cover;}
 
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
   .reveal.in{opacity:1;transform:none;}
@@ -272,7 +456,7 @@
         </div>
         <div class="about-portrait reveal">
           <div class="frame">
-            <div class="ph"><b>Your photo</b>A warm, natural portrait goes here — swap this slot for a photo of you.</div>
+            <img src="assets/charlotte-portrait.jpg" alt="Charlotte Basten — portrait">
           </div>
         </div>
       </div>
@@ -290,108 +474,328 @@
       </div>
 
       <div class="project reveal">
-        <div class="slide s1">
-          <div class="mark">Selah Studio</div>
-          <!-- Replace this placeholder with: <img src="your-image.jpg" alt="The Unraveled Rose"> -->
-          <div class="ph"><b>Landscape project image</b><span>The Unraveled Rose — printed cards &amp; wall art</span></div>
+        <div class="ops-intro">
+          <div class="eyebrow">Case Study · Illustration &amp; Apparel</div>
+          <h3 class="serif ops-intro-title">Unraveled Studio</h3>
+          <p class="ops-tagline">Bold faith. Everyday reminders.</p>
+          <p class="ops-desc">Unraveled Studio is a faith-driven illustration &amp; apparel brand — bold, encouraging designs rooted in scripture. I hand-draw every original illustration, then build it into a whole system of ready-to-print products, so a single drawing becomes a collection: hoodies and tees, stickers, drinkware and prints.</p>
         </div>
-        <div class="caption">
-          <div>
-            <div class="t">The Unraveled Rose</div>
-            <div class="d">A ready-to-print illustration range — shown as framed wall art and greeting cards.</div>
+
+        <div class="cs-slider">
+          <div class="cs-stage">
+            <div class="cs-viewport">
+              <div class="cs-track">
+                <div class="cs-slide framed"><img src="assets/unraveled-tablet.jpg" alt="Unraveled Studio illustrations hand-drawn in Procreate on an iPad"></div>
+                <div class="cs-slide cutout"><img src="assets/unraveled-rose-preaching.png" alt="Original hand-drawn Unraveled Studio illustration"></div>
+                <div class="cs-slide cutout"><img src="assets/unraveled-hoodie.png" alt="Pray First hoodie — Unraveled Studio apparel"></div>
+                <div class="cs-slide cutout"><img src="assets/unraveled-cup.png" alt="Jesus Loves You tumbler — Unraveled Studio drinkware"></div>
+              </div>
+            </div>
+            <button type="button" class="ops-nav prev" aria-label="Previous">‹</button>
+            <button type="button" class="ops-nav next" aria-label="Next">›</button>
           </div>
-          <div class="cat">Print Illustration</div>
+          <div class="ops-tabs">
+            <button type="button" class="ops-tab active">Procreate</button>
+            <button type="button" class="ops-tab">Illustration</button>
+            <button type="button" class="ops-tab">Apparel</button>
+            <button type="button" class="ops-tab">Drinkware</button>
+          </div>
         </div>
       </div>
 
       <div class="project reveal">
-        <div class="slide s2">
-          <div class="mark">Selah Studio</div>
-          <div class="ph"><b>Landscape project image</b><span>Mochi State — character &amp; product mockups</span></div>
+        <div class="ops-intro">
+          <div class="eyebrow">Case Study · Brand Identity &amp; Packaging</div>
+          <h3 class="serif ops-intro-title">Mochi State</h3>
+          <p class="ops-tagline">Playful. Bold. Soft.</p>
+          <p class="ops-desc">Mochi State is a playful, faith-driven mochi brand handmade in Bali. I created the full brand identity — a bold bubble logo and a signature mochi character, a flavour-led colour palette, plus menu, packaging and a whole merch range.</p>
         </div>
-        <div class="caption">
-          <div>
-            <div class="t">Mochi State</div>
-            <div class="d">Playful character illustration shown across stickers, prints and packaging.</div>
+
+        <div class="cs-slider">
+          <div class="cs-stage">
+            <div class="cs-viewport">
+              <div class="cs-track">
+                <div class="cs-slide framed"><img src="assets/mochi-menu.jpg" alt="Mochi State flavour menu"></div>
+                <div class="cs-slide framed"><img src="assets/mochi-apparel.jpg" alt="Mochi State apparel and merchandise range"></div>
+                <div class="cs-slide cutout"><img src="assets/mochi-character.png" alt="Mochi State signature character illustration"></div>
+                <div class="cs-slide cutout"><img src="assets/mochi-patch.png" alt="Mochi State embroidered patch"></div>
+              </div>
+            </div>
+            <button type="button" class="ops-nav prev" aria-label="Previous">‹</button>
+            <button type="button" class="ops-nav next" aria-label="Next">›</button>
           </div>
-          <div class="cat">Illustration &amp; Brand</div>
+          <div class="ops-tabs">
+            <button type="button" class="ops-tab active">Menu</button>
+            <button type="button" class="ops-tab">Apparel</button>
+            <button type="button" class="ops-tab">Character</button>
+            <button type="button" class="ops-tab">Patch</button>
+          </div>
         </div>
       </div>
 
       <div class="project reveal">
-        <div class="slide s3">
-          <div class="mark">Selah Studio</div>
-          <div class="ph"><b>Landscape project image</b><span>Faith Series — scripture art, styled</span></div>
+        <div class="ops-intro">
+          <div class="eyebrow">Case Study · Brand Identity &amp; Apparel</div>
+          <h3 class="serif ops-intro-title">Cove &amp; Cloth</h3>
+          <p class="ops-tagline">Faith woven in. Truth worn out.</p>
+          <p class="ops-desc">Cove &amp; Cloth is a sustainable, faith-based clothing brand designed for comfort and style — made from natural linen and cotton, with scripture and quiet meaning embroidered into every piece. I developed the brand identity, the collection, the embroidery language and the colour &amp; fabric system.</p>
         </div>
-        <div class="caption">
-          <div>
-            <div class="t">Faith Series</div>
-            <div class="d">Scripture and encouragement pieces styled as prints in a warm interior.</div>
+
+        <div class="cs-slider">
+          <div class="cs-stage">
+            <div class="cs-viewport">
+              <div class="cs-track">
+                <div class="cs-slide framed"><img src="assets/cove-collection.jpg" alt="Cove & Cloth women's linen collection lookbook"></div>
+                <div class="cs-slide"><img src="assets/cove-signature.jpg" alt="Cove & Cloth signature linen set with 'Grace' and scripture-inspired embroidery details"></div>
+                <div class="cs-slide framed"><img src="assets/cove-embroidery.jpg" alt="Cove & Cloth embroidery guide — scripture-inspired motifs, word marks and colours"></div>
+              </div>
+            </div>
+            <button type="button" class="ops-nav prev" aria-label="Previous">‹</button>
+            <button type="button" class="ops-nav next" aria-label="Next">›</button>
           </div>
-          <div class="cat">Faith · Digital Product</div>
+          <div class="ops-tabs">
+            <button type="button" class="ops-tab active">Collection</button>
+            <button type="button" class="ops-tab">Signature Look</button>
+            <button type="button" class="ops-tab">Embroidery</button>
+          </div>
         </div>
       </div>
 
       <div class="project reveal">
-        <div class="slide s4">
-          <div class="mark">Selah Studio</div>
-          <div class="ph"><b>Landscape project image</b><span>Brand &amp; identity — logo, palette &amp; assets</span></div>
+        <div class="ops-intro">
+          <div class="eyebrow">Case Study · Brand &amp; Product Design</div>
+          <h3 class="serif ops-intro-title">Brasa</h3>
+          <p class="ops-tagline">Fire first. Chicken second.</p>
+          <p class="ops-desc">Brasa is a Portuguese charcoal-chicken restaurant brand, born in Bali. I built the whole brand world — logo and identity, web design, food illustration, signage, product design and merchandise — warm, fire-lit and full of Portuguese soul.</p>
         </div>
-        <div class="caption">
-          <div>
-            <div class="t">Brand &amp; Identity</div>
-            <div class="d">Logo, colour palette and brand assets designed as a cohesive system.</div>
+
+        <div class="cs-slider">
+          <div class="cs-stage">
+            <div class="cs-viewport">
+              <div class="cs-track">
+                <div class="cs-slide framed"><img src="assets/brasa-branding.jpg" alt="Brasa brand identity — logo, palette and mood"></div>
+                <div class="cs-slide framed"><img src="assets/brasa-product.jpg" alt="Brasa Filano scooter product design"></div>
+                <div class="cs-slide framed"><img src="assets/brasa-signage.jpg" alt="Brasa restaurant window signage"></div>
+              </div>
+            </div>
+            <button type="button" class="ops-nav prev" aria-label="Previous">‹</button>
+            <button type="button" class="ops-nav next" aria-label="Next">›</button>
           </div>
-          <div class="cat">Brand Design</div>
+          <div class="ops-tabs">
+            <button type="button" class="ops-tab active">Brand identity</button>
+            <button type="button" class="ops-tab">Product design</button>
+            <button type="button" class="ops-tab">Signage</button>
+          </div>
         </div>
       </div>
-
-      <p class="coming reveal">Also in development — <em>Cove &amp; Cloth</em>, a faith-inspired linen range.</p>
     </div>
   </section>
 
   <!-- OPERATIONS -->
   <section id="operations">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Operations &amp; Business</div>
-        <h2>I run the back office too</h2>
-        <p>The unglamorous work that keeps a business healthy — done accurately, on time, and off your plate.</p>
-        <div class="rule"></div>
-      </div>
-      <div class="ops-wrap">
-        <div class="ops-cards reveal">
-          <div class="ops-card">
-            <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg>
-            <h3>Accounts &amp; BOS</h3>
-            <p>Bookkeeping, back-of-store admin, reconciliations and reporting kept tidy and current.</p>
+      <div class="backoffice reveal">
+        <div class="bo-hero">
+          <div class="bo-head">
+            <div class="eyebrow">Operations that create clarity</div>
+            <h2 class="serif">Systems, data &amp; strategy that drive real results.</h2>
+            <p>I build the operational backbone behind busy businesses — turning messy data into clarity, streamlining processes and supporting growth with smart systems.</p>
           </div>
-          <div class="ops-card">
-            <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
-            <h3>Stock &amp; Inventory</h3>
-            <p>Stock control, ordering rhythms and inventory systems that stop the leaks.</p>
+
+          <div class="bo-dash">
+            <img src="assets/operations-ss.jpg" alt="Accounts &amp; P&amp;L operations dashboard — daily reconciliation and profit-and-loss">
           </div>
-          <div class="ops-card">
-            <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>
-            <h3>Systems &amp; Design</h3>
-            <p>Menus, templates, brand assets and the small systems that make a team look sharp.</p>
+
+          <div class="bo-impact">
+            <div class="impact-item">
+              <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
+              <div><b>+32%</b><span>Increase in net profit (10 reconciled days)</span></div>
+            </div>
+            <div class="impact-item">
+              <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <div><b>&minus;15 hrs</b><span>Saved per week on reporting &amp; reconciliations</span></div>
+            </div>
+            <div class="impact-item">
+              <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+              <div><b>100%</b><span>Accurate, real-time financial visibility</span></div>
+            </div>
           </div>
-          <div class="ops-card">
-            <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><path d="M4 4h16v12H5.2L4 17.5z"/><path d="M8 9h8M8 12h5"/></svg>
-            <h3>Social &amp; Content</h3>
-            <p>On-brand social content, scheduling and simple marketing that sounds like you.</p>
+
+          <div class="bo-cards">
+            <div class="bo-panel donut-panel">
+              <div class="k">Where every dollar goes</div>
+              <div class="donut-wrap">
+                <div class="donut"><div class="cn"><small>Total expenses</small><b>$28,196.40</b></div></div>
+                <div class="legend">
+                  <div class="row"><span class="dot" style="background:var(--plum)"></span><div class="t"><b>Bank Transfer</b><span>$17,942.75 (64%)</span></div></div>
+                  <div class="row"><span class="dot" style="background:var(--oat)"></span><div class="t"><b>Cash</b><span>$7,258.70 (26%)</span></div></div>
+                  <div class="row"><span class="dot" style="background:#7E9B7A"></span><div class="t"><b>QRIS</b><span>$2,317.60 (8%)</span></div></div>
+                  <div class="row"><span class="dot" style="background:#C39BB0"></span><div class="t"><b>Card</b><span>$677.35 (2%)</span></div></div>
+                </div>
+              </div>
+              <div class="donut-note">Clear insights. Smarter decisions. Healthier business.</div>
+            </div>
+            <div class="bo-panel glance">
+              <div class="k">At a glance</div>
+              <div class="g"><div><div class="lab">Sales</div><div class="val">$33,762.15</div></div>
+                <svg width="54" height="22" viewBox="0 0 54 22" fill="none" stroke="#7E9B7A" stroke-width="1.6"><path d="M1 17l9-4 8 3 9-9 8 4 10-11"/></svg></div>
+              <div class="g"><div><div class="lab">Gross profit</div><div class="val">$15,118.25</div></div>
+                <svg width="54" height="22" viewBox="0 0 54 22" fill="none" stroke="#7E9B7A" stroke-width="1.6"><path d="M1 15l10-2 8-5 9 4 8-6 9-3"/></svg></div>
+              <div class="g"><div><div class="lab">COGS / stock purchases</div><div class="val">$18,643.90</div></div>
+                <svg width="54" height="22" viewBox="0 0 54 22" fill="none" stroke="var(--plum-l)" stroke-width="1.6"><path d="M1 11l9 3 8-4 9 2 8-5 10 4"/></svg></div>
+              <div class="g"><div><div class="lab">Net profit (est.)</div><div class="val">$11,874.25</div></div>
+                <svg width="54" height="22" viewBox="0 0 54 22" fill="none" stroke="#7E9B7A" stroke-width="1.6"><path d="M1 18l10-3 8 1 9-7 8 2 10-9"/></svg></div>
+            </div>
           </div>
         </div>
-        <div class="case reveal">
-          <div class="tag">Currently · Brasa Restaurant, Bali</div>
-          <h3 class="serif">Keeping a busy restaurant running</h3>
-          <p>I handle the operational backbone at Brasa — proof I can be trusted with the numbers and the details, not just the pretty pixels.</p>
-          <ul>
-            <li>Accounts &amp; back-of-store operations</li>
-            <li>Stock &amp; inventory management</li>
-            <li>Design &amp; brand support</li>
-            <li>Day-to-day problem solving</li>
-          </ul>
+
+        <div class="bo-help">
+          <div class="eyebrow">How I help</div>
+          <div class="help-row">
+            <div class="help-item">
+              <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg>
+              <h3>Accounts &amp; BOS</h3>
+              <p>Bookkeeping, back-of-store admin, reconciliations and reporting kept tidy &amp; current.</p>
+            </div>
+            <div class="help-item">
+              <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+              <h3>Stock &amp; Inventory</h3>
+              <p>Stock control, ordering rhythms and inventory systems that stop the leaks.</p>
+            </div>
+            <div class="help-item">
+              <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>
+              <h3>Systems &amp; Design</h3>
+              <p>Menus, templates, brand assets and systems that make a team look sharp.</p>
+            </div>
+            <div class="help-item">
+              <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><path d="M4 4h16v12H5.2L4 17.5z"/><path d="M8 9h8M8 12h5"/></svg>
+              <h3>Social &amp; Content</h3>
+              <p>On-brand social content, scheduling and simple marketing that sounds like you.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bo-bar">
+          <svg class="heart" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#plum)" stroke-width="1.4"><path d="M12 20s-7-4.4-9.2-8.4C1.3 8.7 2.6 5.5 5.6 5c1.9-.3 3.4.8 4.4 2.2C11 5.8 12.5 4.7 14.4 5c3 .5 4.3 3.7 2.8 6.6C19 15.6 12 20 12 20z"/></svg>
+          <div class="msg">When the behind-the-scenes runs smoothly, everything in front of the customer runs better.</div>
+          <div class="now"><small>Currently supporting</small><b>Brasa Restaurant, Bali</b></div>
+        </div>
+      </div>
+
+      <div class="section-head center reveal" style="margin-top:80px;">
+        <div class="eyebrow">Operation Systems &amp; Dashboards</div>
+        <h2>Software I design &amp; build</h2>
+        <p>Custom systems and dashboards that turn the daily chaos of running a life or a business into something calm, clear and accurate.</p>
+        <div class="rule"></div>
+      </div>
+
+      <div class="project reveal" style="margin-top:56px;">
+        <div class="ops-intro">
+          <div class="eyebrow">Business · Restaurant Operations</div>
+          <h3 class="serif ops-intro-title">BOS</h3>
+          <p class="ops-tagline">The whole back-of-house, in one place.</p>
+          <p class="ops-desc">BOS is a custom, cloud-based operations system I built for a Bali restaurant — unifying inventory, recipe costing, daily cash reconciliation, expenses and profit-and-loss into one bilingual dashboard. It replaces spreadsheets and paper with a single source of truth, giving owners real-time visibility over stock and money. I build systems like this for independent operators who've outgrown spreadsheets but don't want bloated enterprise software.</p>
+        </div>
+        <div class="ops-slider">
+          <div class="ops-stage">
+            <div class="ops-viewport">
+              <div class="ops-track">
+                <div class="ops-slide">
+                  <div class="macbook">
+                    <a href="assets/operations-case-study.pdf" target="_blank" rel="noopener" class="mac-link" aria-label="Open the Restaurant Operations case study (PDF)">
+                      <div class="mac-lid"><span class="mac-cam"></span>
+                        <div class="mac-screen"><img src="assets/operations-dashboard.png" alt="Operations system — daily dashboard"></div>
+                      </div>
+                      <div class="mac-base"><span class="mac-notch"></span></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="ops-slide">
+                  <div class="macbook">
+                    <a href="assets/operations-case-study.pdf" target="_blank" rel="noopener" class="mac-link" aria-label="Open the Restaurant Operations case study (PDF)">
+                      <div class="mac-lid"><span class="mac-cam"></span>
+                        <div class="mac-screen"><img src="assets/operations-expenses.png" alt="Operations system — expenses & invoices"></div>
+                      </div>
+                      <div class="mac-base"><span class="mac-notch"></span></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="ops-slide">
+                  <div class="macbook">
+                    <a href="assets/operations-case-study.pdf" target="_blank" rel="noopener" class="mac-link" aria-label="Open the Restaurant Operations case study (PDF)">
+                      <div class="mac-lid"><span class="mac-cam"></span>
+                        <div class="mac-screen"><img src="assets/operations-inventory.png" alt="Operations system — inventory overview"></div>
+                      </div>
+                      <div class="mac-base"><span class="mac-notch"></span></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="ops-nav prev" aria-label="Previous screen">‹</button>
+            <button type="button" class="ops-nav next" aria-label="Next screen">›</button>
+          </div>
+          <div class="ops-tabs">
+            <button type="button" class="ops-tab active">Daily Dashboard</button>
+            <button type="button" class="ops-tab">Expenses</button>
+            <button type="button" class="ops-tab">Inventory</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project reveal" style="margin-top:76px;">
+        <div class="ops-intro">
+          <div class="eyebrow">Personal · Life Dashboard</div>
+          <h3 class="serif ops-intro-title">Charlotte's Sanctuary</h3>
+          <p class="ops-tagline">A calm home for a whole life.</p>
+          <p class="ops-desc">A personal life dashboard I designed and built — journaling, faith, goals, habits, garden and sky, gathered into one warm, considered space. The same care I bring to business systems, turned inward.</p>
+        </div>
+        <div class="sanctuary-panel">
+          <div class="ops-slider">
+            <div class="ops-stage">
+              <div class="ops-viewport">
+                <div class="ops-track">
+                  <div class="ops-slide">
+                    <div class="macbook sanctuary">
+                      <div class="mac-link" style="cursor:default;">
+                        <div class="mac-lid"><span class="mac-cam"></span>
+                          <div class="mac-screen"><img src="assets/personal-dashboard.jpg" alt="Charlotte's Sanctuary dashboard — home"></div>
+                        </div>
+                        <div class="mac-base"><span class="mac-notch"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ops-slide">
+                    <div class="macbook sanctuary">
+                      <div class="mac-link" style="cursor:default;">
+                        <div class="mac-lid"><span class="mac-cam"></span>
+                          <div class="mac-screen"><img src="assets/personal-myday.jpg" alt="Charlotte's Sanctuary — My Day"></div>
+                        </div>
+                        <div class="mac-base"><span class="mac-notch"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ops-slide">
+                    <div class="macbook sanctuary">
+                      <div class="mac-link" style="cursor:default;">
+                        <div class="mac-lid"><span class="mac-cam"></span>
+                          <div class="mac-screen"><img src="assets/personal-achievements.jpg" alt="Charlotte's Sanctuary — Achievements"></div>
+                        </div>
+                        <div class="mac-base"><span class="mac-notch"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="ops-nav prev" aria-label="Previous screen">‹</button>
+              <button type="button" class="ops-nav next" aria-label="Next screen">›</button>
+            </div>
+            <div class="ops-tabs">
+              <button type="button" class="ops-tab active">Dashboard</button>
+              <button type="button" class="ops-tab">My Day</button>
+              <button type="button" class="ops-tab">Achievements</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -408,7 +812,7 @@
       </div>
       <div class="products reveal">
         <div class="product">
-          <div class="thumb">Product image</div>
+          <div class="thumb fit"><img src="assets/unraveled-rose-teaching.png" alt="Faith-based printable illustration"></div>
           <div class="body">
             <h3>Faith-Based Printables</h3>
             <p>Scripture and encouragement illustrations designed for instant download and printing.</p>
@@ -416,15 +820,15 @@
           </div>
         </div>
         <div class="product">
-          <div class="thumb">Product image</div>
+          <div class="thumb fit"><img src="assets/unraveled-rose-preaching.png" alt="Unraveled Studio — 'Come to Me' Jesus illustration print"></div>
           <div class="body">
-            <h3>The Unraveled Rose</h3>
-            <p>Ready-to-print illustration range — wall art, cards and keepsakes with a delicate hand.</p>
+            <h3>Unraveled Studio</h3>
+            <p>Bold, faith-driven illustration prints and apparel — encouraging, everyday reminders rooted in scripture.</p>
             <a href="#" class="shop">Visit the shop</a>
           </div>
         </div>
         <div class="product">
-          <div class="thumb">Product image</div>
+          <div class="thumb fit"><img src="assets/mochi-state-logo.png" alt="Mochi State logo"></div>
           <div class="body">
             <h3>Mochi State</h3>
             <p>Playful character illustration and prints with a soft, collectable charm.</p>
@@ -476,6 +880,24 @@
 <script>
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Sliders — BOS operations + all case studies
+  document.querySelectorAll('.ops-slider, .cs-slider').forEach(function(s){
+    const track=s.querySelector('.ops-track, .cs-track');
+    const slides=s.querySelectorAll('.ops-slide, .cs-slide');
+    const tabs=[...s.querySelectorAll('.ops-tab')];
+    const prev=s.querySelector('.ops-nav.prev'), next=s.querySelector('.ops-nav.next');
+    if(!track||!slides.length) return;
+    let i=0;
+    function go(n){
+      i=(n+slides.length)%slides.length;
+      track.style.transform='translateX('+(-i*100)+'%)';
+      tabs.forEach((t,k)=>t.classList.toggle('active',k===i));
+    }
+    if(prev) prev.addEventListener('click',()=>go(i-1));
+    if(next) next.addEventListener('click',()=>go(i+1));
+    tabs.forEach((t,k)=>t.addEventListener('click',()=>go(k)));
+  });
 </script>
 </body>
 </html>
